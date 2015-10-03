@@ -10,7 +10,7 @@ setup(
     author_email='simon@simon-hargreaves.com',
     url='http://www.simon-hargreaves.com/ffprobe',
     packages=['ffprobe'],
-    instal_requires=['validators']
+    instal_requires=['validators'],
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Console',
