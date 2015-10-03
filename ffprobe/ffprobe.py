@@ -12,6 +12,7 @@ import subprocess
 import re
 import sys
 import os
+import validators
 
 class FFProbe:
     """
@@ -25,7 +26,7 @@ class FFProbe:
                 subprocess.check_call(["ffprobe","-h"],stdout=tempf,stderr=tempf)
         except:
             raise IOError('ffprobe not found.')
-        if os.path.isfile(video_file):
+        if os.path.isfile(video_file) or validators.url(video_file):
             p = subprocess.Popen(["ffprobe","-show_streams","-i",self.video_file],stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True)
             self.format=None
             self.created=None
