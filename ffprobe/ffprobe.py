@@ -27,7 +27,7 @@ class FFProbe:
         except:
             raise IOError('ffprobe not found.')
         if os.path.isfile(video_file) or validators.url(video_file):
-            p = subprocess.Popen(["ffprobe","-show_streams","-i",self.video_file],stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True)
+            p = subprocess.Popen(["ffprobe","-show_streams","-i",self.video_file],stdout=subprocess.PIPE,stderr=subprocess.PIPE)
             self.format=None
             self.created=None
             self.duration=None
